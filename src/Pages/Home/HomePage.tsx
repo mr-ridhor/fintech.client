@@ -1,15 +1,15 @@
 // import Stars from "../../Icons/Stars";
 import Images from "../../Images/Images";
-import {GrCheckmark} from 'react-icons/gr'
+import { GrCheckmark } from "react-icons/gr";
 const HomePage = () => {
   return (
     <div
-    className="h-full w-full p-10"
-    style={{
-      backgroundImage: `url(${Images.background})`,
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-    }}
+      className="h-full w-full p-10"
+      style={{
+        backgroundImage: `url(${Images.background})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <p className="text-white font-bold">RH & CO</p>
       <div className="space-y-0.5">
@@ -23,7 +23,7 @@ const HomePage = () => {
       </div>
       <div className="">
         <span className="bg-yellow-400 h-3 w-3 flex items-center justify-center text-white">
-          <GrCheckmark color="white" size={30}/>
+          <GrCheckmark color="white" size={30} />
         </span>
         {/* <IoMdCheckmarkCircle clasName=""/> */}
       </div>
