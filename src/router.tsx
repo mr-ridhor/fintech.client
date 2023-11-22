@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import HomeLayout from "./Layout/Home/HomeLayout";
 import HomePage from "./Pages/Home/HomePage";
 import AuthLayout from "./Layout/Auth/AuthLayout";
@@ -14,7 +14,7 @@ const router=createBrowserRouter([
         element:<HomeLayout/>,
         children:[
             {
-                path:"/",
+                path:'/',
                 element:<HomePage/>
             }
         ]
@@ -24,19 +24,23 @@ const router=createBrowserRouter([
    // auth routes
 
    {
-    path:'/auth',
-    element:<AuthLayout/>,
-    children:[
-        {
-            path:"/auth/register",
-            element:<RegisterPage/>
-        },
-        {
-            path:"/auth/login",
-            element:<LoginPage/>
-        }
-    ]
-   }
+    path: "auth",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/auth",
+        element: <Navigate to={"/auth/login"} />,
+      },
+      {
+        path:'/auth/register',
+        element:<RegisterPage/>
+      },
+      {
+        path:'/auth/login',
+        element:<LoginPage/>
+      }
+    ],
+  },
 ])
 
 

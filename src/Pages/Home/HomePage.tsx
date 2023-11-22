@@ -1,31 +1,52 @@
 // import Stars from "../../Icons/Stars";
+import { Link } from "react-router-dom";
 import Images from "../../Images/Images";
-import { GrCheckmark } from "react-icons/gr";
+import List from "./Partials/List";
+
 const HomePage = () => {
   return (
     <div
-      className="h-full w-full p-10"
+      className="h-full w-full p"
       style={{
         backgroundImage: `url(${Images.background})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <p className="text-white font-bold">RH & CO</p>
-      <div className="space-y-0.5">
-        <div className="w-16 h-2  rounded-tr bg-yellow-400"></div>
-        <div className="w-16 h-2  rounded-bl bg-yellow-400"></div>
+      <div className="bg-[#F5F5DC] text-purple-600 h-12 flex items-center justify-between px-6 font-medium xl:text-xl">
+        <div className="flex gap-2 ">
+          <p className="cursor-pointer hover:text-yellow-600/90">Home</p>
+          <p className="cursor-pointer hover:text-yellow-600/90">Personal</p>
+          <p className="cursor-pointer hover:text-yellow-600/90">Business</p>
+          <p className="cursor-pointer hover:text-yellow-600/90">Corporate</p>
+        </div>
+        <div className="flex gap-2">
+        
+          <Link to={"auth/register"} className="cursor-pointer hover:text-yellow-600/90">
+          Open an account
+          </Link>
+          <p className="cursor-pointer hover:text-yellow-600/90">Internet Banking</p>
+          <p className="cursor-pointer hover:text-yellow-600/90">Contact us</p>
+        </div>
       </div>
-      <div className="mt-10">
-        <p className="text-white font-bold leading-loose text-5xl w-[400px]">
-          Banking, Finance & E-Pay App UI
-        </p>
-      </div>
-      <div className="">
-        <span className="bg-yellow-400 h-3 w-3 flex items-center justify-center text-white">
-          <GrCheckmark color="white" size={30} />
-        </span>
-        {/* <IoMdCheckmarkCircle clasName=""/> */}
+      <div className="p-6">
+        <p className="text-white font-bold">RH & CO</p>
+        <div className="space-y-0.5">
+          <div className="w-16 h-2  rounded-tr bg-yellow-400"></div>
+          <div className="w-16 h-2  rounded-bl bg-yellow-400"></div>
+        </div>
+        <div className="mt-10">
+          <p className="text-white font-bold leading-loose text-5xl w-[400px]">
+            Banking, Finance & E-Pay App UI
+          </p>
+        </div>
+        <div className="space-y-2">
+          <List text="Instant transfer" />
+          <List text="Virtual Card" />
+          <List text="Instant Card" />
+          <List text="Corporate Banking" />
+          <List text="Business Banking" />
+        </div>
       </div>
     </div>
   );
